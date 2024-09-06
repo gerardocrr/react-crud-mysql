@@ -1,0 +1,30 @@
+### Recuperar todas las movies
+GET http://localhost:3000/movies
+
+### Recuperar movie por ID
+GET http://localhost:3000/movies/2942da34-6433-11ef-8de2-84a9389a971c
+
+### Crear una movie con POST
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{  
+  "title": "holaaaaa",
+  "year": 1994,
+  "director": "Frank Darabont",
+  "poster": "https://i.ebayimg.com/images/g/4goAAOSwMyBe7hnQ/s-l1200.webp"
+} 
+
+### Actualizar una movie con PUT
+PUT http://localhost:3000/movies/27a6f762-6578-11ef-8de2-84a9389a971c
+Content-Type: application/json
+
+{
+  "title": "The Shawshank Redemption",
+  "year": 1994,
+  "director": "Frank Darabont",
+  "poster": "https://i.ebayimg.com/images/g/4goAAOSwMyBe7hnQ/s-l1200.webp"
+} 
+
+### Eliminar movie por ID
+DELETE  http://localhost:3000/movies/1d5b2960-6578-11ef-8de2-84a9389a971c

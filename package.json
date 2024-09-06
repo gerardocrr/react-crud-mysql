@@ -1,0 +1,18 @@
+{
+  "name": "react-crud-mysql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {    
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w frontend\""
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

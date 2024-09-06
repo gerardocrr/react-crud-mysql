@@ -1,0 +1,30 @@
+### Recuperar todos los clientes
+GET http://localhost:3000/clients
+
+### Recuperar cliente por ID
+GET http://localhost:3000/clients/2942da34-6433-11ef-8de2-84a9389a971c
+
+### Crear un cliente con POST
+POST http://localhost:3000/clients
+Content-Type: application/json
+
+{
+  "name": "prueba amount 2",
+  "status": "pending",
+  "email": "email@company.com",
+  "amount": 5000.55
+} 
+
+### Actualizar un cliente con PUT
+PUT http://localhost:3000/clients/fbb9b108-68d8-11ef-8de2-84a9389a971c
+Content-Type: application/json
+
+{
+  "name": "prueba",
+  "status": "failed",
+  "email": "email@company.com",
+  "amount": 60000
+} 
+
+### Eliminar cliente por ID
+DELETE  http://localhost:3000/clients/31ad7fec-68d9-11ef-8de2-84a9389a971c
