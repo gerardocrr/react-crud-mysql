@@ -1,5 +1,5 @@
-import { DataTable } from "./users/data-table";
-import { columns } from "./users/columns";
+import { DataTable } from "./clients/data-table";
+import { columns } from "./clients/columns";
 import { useEffect, useState } from "react";
 
 export function Clients() {

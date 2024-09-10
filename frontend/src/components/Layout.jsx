@@ -35,7 +35,7 @@ export function Layout({ children }) {
           </li>
           <li>
             <Link to="/movies">
-              <i className="bx bx-grid-alt"></i>
+              <i class="bx bxs-movie-play"></i>
               <span className="links_name">Movies</span>
             </Link>
             <span className="tooltip">Movies</span>

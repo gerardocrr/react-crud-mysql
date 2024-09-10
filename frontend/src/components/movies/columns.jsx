@@ -4,37 +4,21 @@ import { DialogDelete } from "../DialogDelete";
 
 export const columns = [
   {
-    accessorKey: "name",
-    header: "Name",
-    cell: ({ row }) => <div className="capitalize">{row.getValue("name")}</div>,
+    accessorKey: "title",
+    header: "Title",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("title")}</div>
+    ),
   },
   {
-    accessorKey: "status",
-    header: "Status",
-    cell: ({ row }) => {
-      const status = row.getValue("status");
-      const variant = {
-        pending:
-          "capitalize bg-gray-500 p-1 rounded-sm w-20 text-white text-center",
-        processing:
-          "capitalize bg-orange-500 p-1 rounded-sm w-20 text-white text-center",
-        success:
-          "capitalize bg-green-500 p-1 rounded-sm w-20 text-white text-center",
-        failed:
-          "capitalize bg-red-600 p-1 rounded-sm w-20 text-white text-center",
-      }[status];
-      return <div className={variant}>{status}</div>;
-    },
-  },
-  {
-    accessorKey: "email",
+    accessorKey: "year",
     header: ({ column }) => {
       return (
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Email
+          Year
           <svg
             className="w-5 h-5 text-gray-800"
             aria-hidden="true"
@@ -55,22 +39,21 @@ export const columns = [
         </Button>
       );
     },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
+    cell: ({ row }) => <div>{row.getValue("year")}</div>,
   },
   {
-    accessorKey: "amount",
-    header: "Amount",
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-
-      // Format the amount as a dollar amount
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
-
-      return <div className="font-medium">{formatted}</div>;
-    },
+    accessorKey: "director",
+    header: "Director",
+    cell: ({ row }) => <div>{row.getValue("director")}</div>,
+  },
+  {
+    accessorKey: "poster",
+    header: () => <div className="text-center">Poster</div>,
+    cell: ({ row }) => (
+      <div className="flex justify-center">
+        <img src={row.getValue("poster")} alt="movie image" width={"10%"} />
+      </div>
+    ),
   },
   {
     accessorKey: "id",
@@ -79,7 +62,7 @@ export const columns = [
     cell: ({ row }) => {
       return (
         <div className="flex justify-end gap-2">
-          <Link to={`/update-client/${row.getValue("id")}`}>
+          <Link to={`/update-movie/${row.getValue("id")}`}>
             <Button variant="outline" size="icon">
               <svg
                 className="w-5 h-5 text-gray-800 dark:text-white"
@@ -101,7 +84,7 @@ export const columns = [
             </Button>
           </Link>
 
-          <DialogDelete id={row.getValue("id")} />
+          <DialogDelete table={"movies"} id={row.getValue("id")} />
         </div>
       );
     },

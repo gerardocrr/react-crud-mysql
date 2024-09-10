@@ -13,7 +13,7 @@ const connection = await mysql.createConnection(connectionString);
 
 export const getAll = async (req, res) => {
   const [movies] = await connection.query(
-    "SELECT BIN_TO_UUID(id) id, title, year, director, poster FROM movies;"
+    "SELECT BIN_TO_UUID(id) id, title, year, director, poster FROM movies ORDER BY created_at DESC;"
   );
   res.json(movies);
 };

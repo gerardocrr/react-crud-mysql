@@ -12,10 +12,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
-export function DialogDelete({ id }) {
+export function DialogDelete({ table, id }) {
   const navigate = useNavigate();
   const handleDelete = () => {
-    fetch(`http://localhost:3000/clients/${id}`, {
+    fetch(`http://localhost:3000/${table}/${id}`, {
       method: "DELETE",
     }).then((response) => {
       if (response.status === 200) {
@@ -52,8 +52,8 @@ export function DialogDelete({ id }) {
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete the
-            customer's data from our servers.
+            This action cannot be undone. This will permanently delete the data
+            from our servers.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
