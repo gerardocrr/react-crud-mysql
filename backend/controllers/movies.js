@@ -1,12 +1,15 @@
 import mysql from "mysql2/promise";
 import { validateMovie, validatePartialMovie } from "../schemas/movies.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const connectionString = {
-  host: "localhost",
-  user: "root",
-  port: 3306,
-  password: "1234",
-  database: "reactcrud",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  port: process.env.DB_PORT,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
 };
 
 const connection = await mysql.createConnection(connectionString);
