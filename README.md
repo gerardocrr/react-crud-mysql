@@ -16,3 +16,7 @@ Ahora desde la carpeta principal corre el siguiente comando para iniciar el proy
 ```
 
 Los proeyctos de backend y frontend iniciaran automaticamente, el frontend estara listo en http://localhost:5173/
+
+![image](https://github.com/user-attachments/assets/1cd5c688-b236-444c-b384-bdc534af1c21)
+
+![image](https://github.com/user-attachments/assets/d71cf73b-c8e1-4435-9d8b-90cfdfcdc0bc)
