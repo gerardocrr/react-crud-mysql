@@ -15,7 +15,7 @@ Ahora desde la carpeta principal corre el siguiente comando para iniciar el proy
   npm run dev
 ```
 
-Los proeyctos de backend y frontend iniciaran automaticamente, el frontend estara listo en http://localhost:5173/
+Los proyectos de backend y frontend iniciaran automaticamente, el frontend estara listo en http://localhost:5173/
 
 ![image](https://github.com/user-attachments/assets/1cd5c688-b236-444c-b384-bdc534af1c21)
 
